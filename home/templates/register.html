@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% block title %} Register Page {% endblock %}
+{% block registeractive %} active {% endblock registeractive %}
+
+{% block css %}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+    height: 10px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 100%;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 20%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 40%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2{
+    font-weight: 300;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+{% endblock %}
+{% block body %}
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>iNeuron Blog<br> Registration</h2>
+       <p>Register from here to access.</p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+        <form action="/register/" method="POST"> {% csrf_token %}
+       <div class="login-form">
+          <form>
+            <h1>Register Here</h1>
+            <label for="username" class="form-label">Username</label>
+            <input type="text" class="form-control" id="username" name="username" required="true">
+
+        <div class="mb-3">
+            <label for="first_nam" class="form-label">First Name</label>
+            <input type="text" class="form-control" id="first_name" name="first_name" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="last_name" class="form-label">Last Name</label>
+            <input type="text" class="form-control" id="last_name" name="last_name" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="email" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email" name="email" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="password1" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password1" name="password1" required="true">
+        </div>
+        <div class="mb-3">
+            <label for="password2" class="form-label">Confirm Password</label>
+            <input type="password" class="form-control" id="password2" name="password2" required="true">
+        </div>
+        <button type="submit" class="btn btn-black">Submit</button>
+        <a href="http://127.0.0.1:8000/accounts/login" target="_blank" class="btn btn-black">Sign in with Google</a>
+          </form>
+       </div>
+    </div>
+    </form>
+ </div>
+{% endblock %}

@@ -1,0 +1,119 @@
+{% extends 'base.html' %}
+
+{% block title %} Profile {% endblock %}
+{% block profileactive %} active {% endblock profileactive %}
+
+{% block css %}
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+
+
+.main-head{
+    height: 500px;
+    background: #FFF;
+   
+}
+
+.sidenav {
+    height: 300%;
+    background-color: #000;
+    overflow-x: hidden;
+    padding-top: 20px;
+}
+
+
+.main {
+    padding: 0px 20px;
+}
+
+@media screen and (max-height: 700px) {
+    .sidenav {padding-top: 25px;}
+}
+
+@media screen and (max-width: 450px) {
+    .login-form{
+        margin-top: 10%;
+    }
+
+    .register-form{
+        margin-top: 10%;
+    }
+}
+
+@media screen and (min-width: 768px){
+    .main{
+        margin-left: 40%; 
+    }
+
+    .sidenav{
+        width: 40%;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+    }
+
+    .login-form{
+        margin-top: 80%;
+    }
+
+    .register-form{
+        margin-top: 20%;
+    }
+}
+
+
+.login-main-text{
+    margin-top: 20%;
+    padding: 60px;
+    color: #fff;
+}
+
+.login-main-text h2{
+    font-weight: 600;
+}
+
+.btn-black{
+    background-color: #000 !important;
+    color: #fff;
+}
+.form-group{
+    font-size: 35px;
+    position: relative;
+    left: 30px;
+    top: -150px;
+}
+{% endblock %}
+{% block body %}
+<div class="sidenav">
+    <div class="login-main-text">
+       <h2>User<br> Profile</h2>
+       <p></p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+        <form action="/login/" method="POST"> {% csrf_token %}
+       <div class="login-form">
+          <form>
+             <div class="form-group">
+                <label>Username:</label><p>{{user}}</p>
+             </div>
+             <div class="form-group">
+                <label>Full Name:</label>
+                <p>{{user.get_full_name}}</p>
+             </div>
+             <div class="form-group">
+             <label>Email:</label>
+             <p>{{user.email}}</p>
+            </div>
+          </form>
+       </div>
+    </div>
+ </div>
+</form>
+{% endblock %}
