@@ -1,9 +1,9 @@
-## Blog Website
+## 🚀 Blog Website
 Django is a high-level Python web framework that enables rapid development of secure and maintainable websites. 
 Built by experienced developers, Django takes care of much of the hassle of web development, 
 so you can focus on writing your app without needing to reinvent the wheel.
 
-## Blog app interface
+## 🌆 Blog app interface
 ![image](https://user-images.githubusercontent.com/40850370/187646882-e20c3ae0-09c7-46b3-be22-dc362dddbe24.png)
 
 ![image](https://user-images.githubusercontent.com/40850370/187647376-d11d2bdc-80c9-43a0-aca5-cb49b74c1960.png)
@@ -12,7 +12,7 @@ so you can focus on writing your app without needing to reinvent the wheel.
 
 ![image](https://user-images.githubusercontent.com/40850370/187646581-a9c66093-4a39-4c62-936c-a9d9d55505ff.png)
 
-## How to Setup 
+## 💻 How to Setup 
 How to run the project :
 
 1. Create new Environment with python 3.7 
@@ -43,11 +43,11 @@ python manage.py runserver
 ```python
 python manage.py runserver
 ```
-## Tech Stack 
+## 🧑‍💻 Tech Stack 
 1. python 
 2. Django 
 3. Html 
 4. Css
 
-## Conclusion 
+## 👋 Conclusion 
 To get hands on learning on the django framework we, have build a blog website. 
